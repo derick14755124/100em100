@@ -46,14 +46,25 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(0,39,118,.2);bord
 .tag.pub{background:#fff7c2;color:#6b5a00}
 .meta .share{margin-left:auto;color:var(--mut)}.meta .share a,.meta .share button{font-size:11px;padding:3px 8px;border-color:var(--line)}
 .voting{grid-column:2;margin-top:12px}
-.btns{display:flex;gap:8px}
-.btn{flex:1;font:inherit;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 10px;border-radius:12px;cursor:pointer;background:#fff;transition:.15s}
-.btn .n{font-weight:800;font-variant-numeric:tabular-nums;padding:1px 8px;border-radius:999px;font-size:13px}
-.btn.yes{border:2px solid var(--g);color:#007a2e}.btn.yes .n{background:#e3f5ea}
-.btn.no{border:2px solid var(--r);color:#b31f1f}.btn.no .n{background:#fbe6e6}
-.btn.yes:hover{background:#f1faf4}.btn.no:hover{background:#fdf2f2}
-.btn.yes.on{background:var(--g);color:#fff}.btn.yes.on .n{background:rgba(255,255,255,.22)}
-.btn.no.on{background:var(--r);color:#fff}.btn.no.on .n{background:rgba(255,255,255,.22)}
+.vote-all{position:relative;background:#fff;border:2px solid var(--g);border-radius:16px;padding:22px 16px 14px;margin:0 0 14px;overflow:hidden;box-shadow:0 8px 24px rgba(0,156,59,.14)}
+.vote-all::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--g) 0 25%,var(--y) 25% 50%,var(--b) 50% 75%,var(--r) 75%)}
+.vote-all-help{margin:0 0 12px;font-size:15.5px;font-weight:600;color:var(--ink)}
+#agreeAll{width:100%;font:inherit;font-weight:800;font-size:20px;min-height:60px;padding:16px 18px;border:0;border-radius:14px;cursor:pointer;background:var(--g);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 16px rgba(0,156,59,.28);touch-action:manipulation}
+#agreeAll:hover{filter:brightness(1.06)}
+#agreeAll:disabled{opacity:.65;cursor:progress}
+.agree-mark{width:28px;height:28px;border-radius:50%;background:var(--y);color:var(--b);display:grid;place-items:center;font-size:16px}
+.vote-all-status{margin:10px 0 0;font-size:14px;font-weight:600;color:var(--b)}
+.vote-all-status:empty{display:none}
+.m.mine-no{border-color:#f0b4b4;background:#fffafa}
+.disagree{position:relative;display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:12px 14px;border:2px solid #f0b4b4;border-radius:14px;background:#fff;cursor:pointer;font-weight:800;font-size:18px;color:#9a3030;user-select:none;touch-action:manipulation}
+.disagree input{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:pointer}
+.disagree .box{width:32px;height:32px;flex:none;border:2px solid var(--r);border-radius:8px;background:#fff;display:grid;place-items:center}
+.disagree input:checked+.box{background:var(--r)}
+.disagree input:checked+.box::after{content:"";width:14px;height:8px;border-left:3px solid #fff;border-bottom:3px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.disagree input:focus-visible+.box{outline:3px solid var(--y);outline-offset:3px}
+.disagree.on,.disagree:has(input:checked){border-color:var(--r);background:#fdecec;color:#9a1f1f}
+.disagree:hover{background:#fff6f6}
+.disagree.on:hover,.disagree:has(input:checked):hover{background:#fdecec}
 .bar{height:8px;border-radius:999px;background:#eceff5;overflow:hidden;display:flex;margin-top:10px}
 .bar i{display:block;height:100%}.bar .a{background:var(--g)}.bar .c{background:var(--r)}
 .summary{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mut);margin-top:5px;gap:8px;flex-wrap:wrap}
