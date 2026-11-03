@@ -13,24 +13,31 @@ function hot(m){const age=(Date.now()-m.created_at)/3600000;return (m.recent*2+m
 function div(m){const t=m.ups+m.downs;return t?t*(1-Math.abs(m.ups-m.downs)/t):0;}
 function stats(){const v=items.reduce((s,m)=>s+m.ups+m.downs,0),mine=items.filter(m=>m.my_vote).length;
  $('#stats').innerHTML=`<div><b>${fmt(items.length)}</b><span>medidas na lista</span></div><div><b>${fmt(v)}</b><span>votos registrados</span></div><div><b>${fmt(mine)}</b><span>seus votos</span></div>`;}
-function card(m){const t=m.ups+m.downs,pa=t?Math.round(m.ups*100/t):0,pc=t?100-pa:0;
- return `<li class="m${m.rank<=3?' top3':''}" id="m${m.id}"><div class="pos" title="Posição no ranking">${m.rank}</div>
+function agreeStatus(){const agreed=items.filter(m=>m.my_vote===1).length,disagreed=items.filter(m=>m.my_vote===-1).length,el=$('#agreeStatus');
+ if(!el)return; el.textContent=!agreed&&!disagreed?'':disagreed===0&&agreed===items.length?'Você concorda com todas as medidas.':`Você concorda com ${fmt(agreed)} e discorda de ${fmt(disagreed)}.`;}
+function card(m){const t=m.ups+m.downs,pa=t?Math.round(m.ups*100/t):0,pc=t?100-pa:0,no=m.my_vote===-1;
+ return `<li class="m${m.rank<=3?' top3':''}${no?' mine-no':''}" id="m${m.id}"><div class="pos" title="Posição no ranking">${m.rank}</div>
  <div class="body"><p class="txt">${esc(m.text)}</p>${m.impact?`<p class="impact">${esc(m.impact)}</p>`:''}
  <div class="meta"><span class="tag${m.combo==='pub'?' pub':''}">${COMBOS[m.combo]||''}</span><span class="tag">${AREAS[m.area]||'Outros'}</span><span class="share">${shareHtml('Medida #'+m.rank+' no 100em100: '+m.text,SITE+'#m'+m.id)}</span></div></div>
- <div class="voting"><div class="btns">
-  <button class="btn yes${m.my_vote===1?' on':''}" data-id="${m.id}" data-v="1" aria-pressed="${m.my_vote===1}">✓ Concordo <span class="n">${fmt(m.ups)}</span></button>
-  <button class="btn no${m.my_vote===-1?' on':''}" data-id="${m.id}" data-v="-1" aria-pressed="${m.my_vote===-1}">✕ Discordo <span class="n">${fmt(m.downs)}</span></button></div>
+ <div class="voting"><label class="disagree${no?' on':''}"><input type="checkbox" class="discordo" data-id="${m.id}"${no?' checked':''} aria-label="Discordo desta medida"><span class="box" aria-hidden="true"></span><span>Discordo</span></label>
   <div class="bar" role="img" aria-label="${pa}% a favor"><i class="a" style="width:${pa}%"></i><i class="c" style="width:${pc}%"></i></div>
   <div class="summary"><span>${t?`<b>${pa}%</b> de aprovação · ${fmt(m.ups)} a favor · ${fmt(m.downs)} contra`:'Ainda sem votos. Seja o primeiro.'}</span><span>Saldo <b>${m.score>0?'+':''}${fmt(m.score)}</b>${m.my_vote?` · <span class="mine">Você ${m.my_vote===1?'concorda':'discorda'}</span>`:''}</span></div></div></li>`;}
-function render(){stats();const q=$('#q').value.toLowerCase().normalize('NFD').replace(/\p{M}/gu,''),fa=$('#farea').value,fc=$('#fcombo').value;
+function render(){stats();agreeStatus();const q=$('#q').value.toLowerCase().normalize('NFD').replace(/\p{M}/gu,''),fa=$('#farea').value,fc=$('#fcombo').value;
  document.querySelectorAll('#chips button').forEach(b=>b.classList.toggle('on',b.dataset.c===fc));
  let l=items.filter(m=>(!fa||m.area===fa)&&(!fc||m.combo===fc)&&(!q||m.text.toLowerCase().normalize('NFD').replace(/\p{M}/gu,'').includes(q)));
  if(tab==='top')l.sort((a,b)=>a.rank-b.rank);else if(tab==='new')l.sort((a,b)=>b.created_at-a.created_at);else if(tab==='div')l.sort((a,b)=>div(b)-div(a)||a.rank-b.rank);else l.sort((a,b)=>hot(b)-hot(a));
  $('#list').innerHTML=l.length?l.map(card).join(''):'<p class="muted">Nenhuma medida encontrada.</p>';}
 function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
-$('#list').addEventListener('click',async e=>{const b=e.target.closest('.btn');if(!b)return;const id=+b.dataset.id,m=items.find(x=>x.id===id);let v=+b.dataset.v;if(m.my_vote===v)v=0;
- const r=await fetch(`/api/measures/${id}/vote`,{method:'POST',headers:H,body:JSON.stringify({value:v})});const d=await r.json();if(!r.ok)return toast(d.error);
- Object.assign(m,d);rerank();render();toast(v===1?'Voto registrado: Concordo':v===-1?'Voto registrado: Discordo':'Voto retirado');});
+$('#list').addEventListener('change',async e=>{const input=e.target.closest('input.discordo');if(!input||input.disabled)return;const id=+input.dataset.id,m=items.find(x=>x.id===id);if(!m)return;
+ const v=input.checked?-1:1;input.disabled=true;
+ const r=await fetch(`/api/measures/${id}/vote`,{method:'POST',headers:H,body:JSON.stringify({value:v})});const d=await r.json();
+ if(!r.ok){input.checked=m.my_vote===-1;input.disabled=false;return toast(d.error);}
+ Object.assign(m,d);rerank();render();toast(v===-1?'Voto registrado: Discordo':'Voto registrado: Concordo');});
+$('#agreeAll').addEventListener('click',async()=>{const b=$('#agreeAll');if(b.disabled)return;b.disabled=true;
+ try{const r=await fetch('/api/vote-all',{method:'POST',headers:H,body:'{}'});const d=await r.json();if(!r.ok)return toast(d.error||'Não foi possível registrar agora.');
+  await load();toast(d.disagreed>0?'Concordo registrado. As medidas marcadas como Discordo continuam iguais.':'Concordo registrado em todas as medidas.');}
+ catch{toast('Não foi possível registrar agora. Tente de novo.');}
+ finally{b.disabled=false;}});
 $('#form').addEventListener('submit',async e=>{e.preventDefault();const r=await fetch('/api/measures',{method:'POST',headers:H,body:JSON.stringify({text:$('#text').value,area:$('#area').value})});const d=await r.json();
  $('#msg').textContent=r.ok?'Sugestão enviada. Ela já está na lista e pode receber Concordo e Discordo.':d.error;if(r.ok){$('#text').value='';$('#count').textContent='0/200';tab='new';setTab();await load();document.querySelector('#m'+d.id)?.scrollIntoView({block:'center',behavior:'smooth'});}});
 $('#text').addEventListener('input',()=>$('#count').textContent=$('#text').value.length+'/200');

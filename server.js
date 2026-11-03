@@ -80,6 +80,35 @@ app.post('/api/measures/:id/vote', limit('vote',300,600000), (req,res)=>{
   const m=db.prepare('SELECT id,score,ups,downs FROM measures WHERE id=?').get(id);
   res.json({...m,my_vote:value});
 });
+// Um clique: Concordo em todas as medidas deste visitante.
+// Não altera Discordo já gravado. Repetir não duplica voto nem muda a data do voto existente.
+app.post('/api/vote-all', limit('voteall', 20, 600000), (req, res) => {
+  const vid = voterId(req);
+  if (!vid) return res.status(400).json({ error: 'Identificação ausente.' });
+  if (req.body && Object.prototype.hasOwnProperty.call(req.body, 'value') && Number(req.body.value) !== 1) {
+    return res.status(400).json({ error: 'Voto inválido.' });
+  }
+  const now = Date.now(), ip = ipHash(req);
+  let inserted = 0;
+  db.exec('BEGIN');
+  try {
+    const r = db.prepare(`INSERT INTO votes(measure_id,voter_id,value,ip_hash,created_at)
+      SELECT m.id,?,1,?,? FROM measures m
+      WHERE NOT EXISTS (SELECT 1 FROM votes v WHERE v.measure_id=m.id AND v.voter_id=?)`).run(vid, ip, now, vid);
+    inserted = Number(r.changes || 0);
+    if (inserted) {
+      db.prepare(`UPDATE measures SET ups=(SELECT COUNT(*) FROM votes WHERE measure_id=measures.id AND value=1),
+        downs=(SELECT COUNT(*) FROM votes WHERE measure_id=measures.id AND value=-1)`).run();
+      db.prepare('UPDATE measures SET score=ups-downs').run();
+    }
+    db.exec('COMMIT');
+  } catch (e) { db.exec('ROLLBACK'); throw e; }
+  const c = db.prepare(`SELECT
+    (SELECT COUNT(*) FROM measures) total,
+    (SELECT COUNT(*) FROM votes WHERE voter_id=? AND value=1) agreed,
+    (SELECT COUNT(*) FROM votes WHERE voter_id=? AND value=-1) disagreed`).get(vid, vid);
+  res.json({ ok: true, inserted, total: Number(c.total), agreed: Number(c.agreed), disagreed: Number(c.disagreed) });
+});
 // Pergunta de entrada: "Você concorda que o Brasil precisa de medidas?"
 function pollState(vid){const r=db.prepare('SELECT COALESCE(SUM(value=1),0) sim, COALESCE(SUM(value=-1),0) nao FROM poll_votes').get();
   const m=vid?db.prepare('SELECT value FROM poll_votes WHERE voter_id=?').get(vid):null; return {sim:Number(r.sim),nao:Number(r.nao),my_vote:m?m.value:0};}

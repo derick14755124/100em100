@@ -16,18 +16,23 @@
   <p class="pinfo" id="pinfo">Um voto por pessoa. Responda e veja as medidas abaixo.</p>
  </section>
  <h2 class="h1">Cem ações para os <span>primeiros 100 dias</span> do próximo presidente.</h2>
- <p class="lead">O novo governo assume em janeiro de 2031. Diga se você concorda ou discorda de cada medida e sugira as que faltam. A ordem da lista é decidida pelo povo.</p>
+ <p class="lead">O novo governo assume em janeiro de 2031. Concorde com tudo e marque só o que você discorda, ou sugira as medidas que faltam. A ordem da lista é decidida pelo povo.</p>
  <p class="manifesto">Sem partido, sem candidato, sem dono. Só o Brasil que a gente quer.</p>
  <div class="stats" id="stats"></div>
  <a class="cta" href="#sugira">Sugira uma medida</a>
 </div></header>
 <main class="wrap" id="medidas">
- <section class="how"><div><b class="ic g">✓</b><span><strong>Concordo</strong> quando a medida deve estar na lista</span></div><div><b class="ic r">✕</b><span><strong>Discordo</strong> quando você é contra a medida</span></div><div><b class="ic y">+</b><span><strong>Sugira</strong> o que ficou de fora</span></div></section>
+ <section class="how"><div><b class="ic g">✓</b><span><strong>Concordo com tudo</strong> registra seu apoio de uma vez</span></div><div><b class="ic r">✕</b><span><strong>Discordo</strong> só no que você não quer na lista</span></div><div><b class="ic y">+</b><span><strong>Sugira</strong> o que ficou de fora</span></div></section>
  <h2 class="sec" id="ranking">Ranking do povo</h2>
- <p class="crit">Ordem inicial pelo impacto estimado, com juros da dívida e Previdência no topo. Cada voto reordena a lista pelo saldo de Concordo menos Discordo. Um voto por pessoa em cada medida, e você pode mudar ou retirar quando quiser.</p>
+ <p class="crit">Ordem inicial pelo impacto estimado, com juros da dívida e Previdência no topo. Cada voto reordena a lista pelo saldo de Concordo menos Discordo. Um voto por pessoa em cada medida, e você pode mudar quando quiser.</p>
  <nav class="tabs" id="tabs"><button data-t="top" class="on">Mais apoiadas</button><button data-t="new">Novas</button><button data-t="hot">Em alta</button><button data-t="div">Mais divididas</button></nav>
  <div class="chips" id="chips"></div>
  <div class="filters"><input id="q" type="search" placeholder="Buscar medida" aria-label="Buscar medida"><select id="fcombo" aria-label="Combo"></select><select id="farea" aria-label="Área"></select></div>
+ <div class="vote-all">
+  <p class="vote-all-help">Concorda com quase tudo? Clique em Concordo com tudo e depois marque só o que você discorda.</p>
+  <button type="button" id="agreeAll"><span class="agree-mark" aria-hidden="true">✓</span> Concordo com tudo</button>
+  <p class="vote-all-status" id="agreeStatus" role="status"></p>
+ </div>
  <ol id="list"></ol>
  <section class="card propose" id="sugira">
   <h2>Sugira uma medida</h2>
