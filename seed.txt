@@ -1,0 +1,100 @@
+Arcabouço fiscal crível, com superávit primário que estabilize e reduza a dívida pública.|est|jur|Juros do setor público: R$ 1,205 tri em 12 meses (BCB, set/2026)
+Teto real para o gasto primário, crescendo sempre abaixo da receita.|est|jur|Ataca a causa dos R$ 1,205 tri de juros (BCB, set/2026)
+Corte imediato no excesso do Estado, para derrubar os juros.|est|jur|Déficit nominal: R$ 1,275 tri em 12 meses (BCB, set/2026)
+Idade mínima e regras de aposentadoria iguais para todas as categorias.|est|prev|Déficit do INSS (RGPS): R$ 320,9 bi em 2025 (Tesouro)
+Desvinculação do salário mínimo: benefícios previdenciários, assistenciais e demais gastos públicos corrigidos pela inflação.|est|prev|Cada R$ 1 no mínimo custa cerca de R$ 413 mi/ano (governo, 2025)
+Fim das vinculações obrigatórias de receita.|est|jur|92,4% do gasto primário é obrigatório (Consultorias do Congresso, PLOA 2026)
+Reforma da Previdência dos militares, igualando às regras civis.|est|prev|Déficit dos militares: R$ 53,0 bi em 2025 (Tesouro)
+Teto para aposentadorias do serviço público, no máximo o dobro do teto do INSS, valendo também para quem já se aposentou.|est|prev|Déficit do RPPS civil da União: R$ 62,6 bi em 2025 (Tesouro)
+Reforma obrigatória da previdência de estados e municípios, com as mesmas regras da União.|est|prev|Só SP, RJ, MG e RS: cerca de R$ 55 bi de déficit em 2024 (RREO/Tesouro)
+Banco Central com mandato fixo e autonomia total.|eco|jur|Credibilidade reduz o prêmio de risco sobre R$ 1,205 tri de juros (BCB)
+Regra de ouro com punição pessoal ao gestor que gastar sem receita.|est|jur|
+Plano de redução da dívida bruta com meta em lei e venda de ativos para abater dívida.|est|jur|Juros: 8,99% do PIB em 12 meses (BCB, set/2026)
+Fim do direito adquirido como trava para reformar o Estado.|est|prev|Viabiliza reformas sobre R$ 442 bi de déficit previdenciário federal (Tesouro, 2025)
+Corte das renúncias fiscais para 2% do PIB, como manda a EC 109, com revisão anual e prazo de validade para cada uma.|eco|isen|Renúncias: R$ 612,8 bi em 2026 (Receita Federal); a meta de 2% libera cerca de R$ 336 bi (estimativa)
+Reforma tributária com imposto único sobre consumo, sem regimes especiais.|eco|custo|Custo Brasil: R$ 1,7 tri/ano (MBC/FGV/MDIC, valores de 2021)
+Segurança jurídica para contratos e investimentos.|eco|custo|Eixo do Custo Brasil de R$ 1,7 tri/ano (MBC/FGV/MDIC)
+Orçamento base zero a cada quatro anos.|est|jur|
+Pente-fino permanente e cadastro único auditado contra fraudes no INSS, BPC e programas sociais.|soc|prev|
+Revisão do Simples Nacional, com transição para quem cresce e fim do incentivo a ficar pequeno.|eco|isen|Maior renúncia: R$ 134,3 bi em 2026 (Receita Federal)
+Simplificação radical das obrigações acessórias, com declaração única.|eco|custo|Eixo honrar tributos do Custo Brasil (MBC/FGV/MDIC)
+Reforma trabalhista ampliada, com negociação acima da lei.|eco|custo|Empregar capital humano é o maior eixo do Custo Brasil (MBC/MDIC)
+Concessões de rodovias, portos, aeroportos e ferrovias.|inf|custo|Eixo infraestrutura do Custo Brasil (MBC/MDIC)
+Abertura comercial gradual e acordos de livre comércio com os grandes blocos.|eco|custo|Eixo integração a cadeias globais do Custo Brasil (MBC/MDIC)
+Desoneração da folha de pagamento.|eco|custo|
+Revisão dos benefícios fiscais do agro, com crédito privado e menos subsídio estatal.|amb|isen|Renúncias do agro: R$ 79,5 bi em 2026 (Receita Federal)
+Revisão da Zona Franca de Manaus, com metas de resultado e prazo de validade.|eco|isen|Renúncia: R$ 36,0 bi em 2026 (Receita Federal)
+Tributação de lucros e dividendos, com redução do imposto sobre a empresa.|eco|isen|
+Energia com mercado livre para todos os consumidores.|inf|custo|
+Fim dos subsídios cruzados na conta de luz.|inf|custo|
+Prioridade a ferrovias e cabotagem no transporte de carga.|inf|custo|
+Fim da guerra fiscal entre estados.|eco|isen|
+Limite constitucional para a carga tributária total.|eco|isen|
+Fim dos supersalários e penduricalhos acima do teto.|est|maq|R$ 24,3 bi pagos acima do teto em 2025 (levantamento citado por O Globo, ago/2026)
+Estabilidade só para carreiras de Estado, com avaliação de desempenho.|est|maq|Pessoal da União: R$ 407,9 bi em 2025 (Tesouro)
+Privatizar ou fechar estatais deficitárias.|est|maq|Estatais dependentes receberam R$ 30,9 bi do Tesouro em 2025 (MGI)
+Fim das emendas parlamentares impositivas.|pol|pol|Emendas: R$ 61 bi na LOA 2026, R$ 37,8 bi impositivas (Senado)
+Fim do monopólio dos Correios.|est|maq|Prejuízo dos Correios: R$ 8,46 bi em 2025 (MGI/Folha)
+Corte de cargos comissionados para no máximo 10% do quadro.|est|maq|
+Fim do auxílio-moradia e verbas indenizatórias disfarçadas.|est|maq|Parte dos R$ 24,3 bi acima do teto (2025)
+Concurso público como única porta de entrada, salvo exceções mínimas.|est|maq|
+Licenciamento ambiental com prazo máximo, sob pena de aprovação automática.|amb|custo|
+Abrir uma empresa em um dia, fechar em uma semana.|eco|custo|
+Saneamento básico universal com investimento privado.|inf|custo|
+Exploração responsável de petróleo, gás e minérios.|inf|custo|
+Piso de investimento público em infraestrutura, protegido de cortes.|inf|custo|Investimentos federais previstos: R$ 85,6 bi no PLOA 2026
+Zonas econômicas especiais para indústria e exportação.|eco|custo|
+Fim das férias de 60 dias para juízes e promotores.|pol|just|Judiciário custou R$ 164,6 bi em 2025, 1,3% do PIB (CNJ)
+Limite de recursos judiciais, com processo encerrado em prazo máximo.|pol|just|Eixo ambiente jurídico do Custo Brasil (MBC/MDIC)
+Justiça digital e arbitragem obrigatória para causas pequenas.|pol|just|
+Fim da aposentadoria compulsória como punição.|pol|just|
+Fundir municípios que não se sustentam com arrecadação própria.|est|maq|
+Governo 100% digital, com identidade única.|est|maq|
+Venda de imóveis públicos ociosos.|est|maq|
+Cartórios digitais com custo reduzido e fim do reconhecimento de firma e da autenticação para o cidadão.|est|custo|
+Fim do fundo eleitoral e do fundo partidário.|pol|pol|Fundo eleitoral R$ 4,9 bi e partidário cerca de R$ 1 bi em 2026 (TSE/Senado)
+Redução do número de deputados, senadores e vereadores, com fim das suplências de senador sem voto.|pol|pol|
+Fim dos carros oficiais, exceto para chefes de poder.|est|maq|
+Programas sociais com porta de saída e exigência de qualificação.|soc|soc|
+SUS com gestão profissional e metas por unidade.|soc|soc|
+Prontuário eletrônico nacional único e fim das filas com marcação digital de consultas e exames.|soc|soc|
+Prioridade à atenção básica e ao médico de família.|soc|soc|
+Fim da contribuição sindical obrigatória em qualquer forma.|eco|custo|
+Regularização fundiária urbana em massa.|inf|custo|
+Título de propriedade para quem ocupa terra produtiva.|amb|custo|
+Prioridade à educação básica e técnica sobre o ensino superior gratuito.|edu|edu|União gastou R$ 129,9 bi em ensino em 2025 (Tesouro)
+Alfabetização garantida até os 7 anos, com meta e cobrança por município.|edu|edu|
+Escola em tempo integral em toda a rede pública.|edu|edu|
+Avaliação nacional dos professores, com salário ligado ao desempenho dos alunos.|edu|edu|
+Universidade pública cobrando mensalidade de quem pode pagar.|edu|edu|
+Bolsa de estudos atrelada a desempenho, não a cota de renda apenas.|edu|edu|
+Investimento em ciência ligado a resultados e patentes.|edu|edu|
+Internet de alta velocidade em todo o território.|inf|custo|
+Atração de talentos estrangeiros com visto rápido.|out|custo|
+Combate ao crime organizado com foco em lavagem de dinheiro.|seg|seg|
+Controle de fronteiras com tecnologia e Forças Armadas.|seg|seg|
+Inteligência integrada entre polícias federal e estaduais.|seg|seg|
+Polícia com carreira única, ciclo completo e câmeras corporais.|seg|seg|
+Código Penal mais duro para crimes violentos.|seg|seg|
+Fim da saidinha temporária e progressão de regime só com trabalho e estudo comprovados.|seg|seg|
+Presídios com trabalho obrigatório e parceria privada.|seg|seg|
+Maioridade penal reduzida para crimes hediondos.|seg|seg|
+Combate real ao desmatamento ilegal, com rastreio de origem.|amb|amb|
+Pagamento por serviços ambientais a produtores rurais.|amb|amb|
+Transparência total de gastos públicos em tempo real.|est|pol|
+Confisco de bens de corruptos condenados.|pol|pol|
+Proteção e recompensa a denunciantes de corrupção.|pol|pol|
+Lei de conflito de interesses com quarentena real.|pol|pol|
+Fim do foro privilegiado.|pol|pol|
+Prisão após condenação em segunda instância.|pol|pol|
+Fim das decisões monocráticas em temas de grande impacto.|pol|just|
+Mandato fixo e não renovável para ministros do STF, com indicação por critérios técnicos e sabatina pública.|pol|just|
+Fim da reeleição para o Executivo, com mandato de cinco anos.|pol|pol|
+Voto distrital misto.|pol|pol|
+Cláusula de barreira mais dura para partidos.|pol|pol|
+Voto facultativo.|pol|pol|
+Recall de mandato por iniciativa popular.|pol|pol|
+Lei de responsabilidade social, com metas de educação, saúde e segurança.|soc|soc|
+Pena de morte para corrupção grave, como na China.|seg|pol|
+Nova Constituição.|pol|inst|
+Plebiscito nacional para aprovar o pacote.|out|inst|
